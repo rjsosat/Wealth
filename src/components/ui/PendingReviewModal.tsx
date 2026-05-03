@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useFinanceStore } from '../../store/useFinanceStore';
 import { TransactionForm } from './TransactionForm';
 import { X } from 'lucide-react';

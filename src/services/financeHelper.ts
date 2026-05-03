@@ -1,4 +1,4 @@
-import { format, isSameMonth, parseISO } from 'date-fns';
+import { format } from 'date-fns';
 import { useMemo } from 'react';
 import { useFinanceStore } from '../store/useFinanceStore';
 import type { Currency } from '../types';
@@ -131,7 +131,7 @@ export const useFinanceCalculations = () => {
     // 5. Monthly Expenses by Category Donut Chart
     const currentMonthCategoryBreakdown = useMemo(() => {
         const nowStr = new Date().toISOString().substring(0, 7);
-        const categoryMap = new Map<string, { amount: number, color: string, name: string }>();
+        const categoryMap = new Map<string, { id: string, amount: number, color: string, name: string }>();
 
         // Get total first for percentages
         const thisMonthExpenses = transactions.filter((t) => t.type === 'Expense' && t.date.substring(0, 7) === nowStr);

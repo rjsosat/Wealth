@@ -1,7 +1,7 @@
 import { useFinanceStore } from '../store/useFinanceStore';
 import { Card } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
-import { Plus, ArrowDownRight, ArrowUpRight, Trash2, FilterX } from 'lucide-react';
+import { Plus, ArrowDownRight, ArrowUpRight, Trash2 } from 'lucide-react';
 import { format } from 'date-fns';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
@@ -18,7 +18,6 @@ export function Transactions() {
     ? allTransactions.filter(t => t.categoryId === categoryFilter)
     : allTransactions;
 
-  const activeCategory = categoryFilter ? categories.find(c => c.id === categoryFilter) : null;
 
   const formatMoney = (amount: number, currency: string) => {
     return new Intl.NumberFormat('en-US', { style: 'currency', currency }).format(amount);
